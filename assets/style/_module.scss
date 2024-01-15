@@ -323,7 +323,7 @@
 
 	// .header_title
 	&_title {
-		@include d_f(flex);
+		@include d_f(flex,none,center);
 		color: #00e374;
 		font-size: 24px;
 		font-style: normal;
@@ -364,7 +364,7 @@
 	// .menu_li
 	&_li {
 		color: #fff;
-
+@extend %hand;
 		&._try {
 			color: #00F8A9;
 

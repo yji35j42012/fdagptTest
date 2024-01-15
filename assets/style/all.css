@@ -121,7 +121,7 @@ table {
   transition: all 0.3s ease-in-out;
 }
 
-.front_filter_item, .normal_sort, .numBox_btn, .border_btn, .normal_btn, .normal_icon {
+.front_filter_item, .normal_sort, .menu_li, .numBox_btn, .border_btn, .normal_btn, .normal_icon {
   cursor: pointer;
 }
 
@@ -423,6 +423,8 @@ table {
 }
 .header_title {
   display: flex;
+  justify-content: none;
+  align-items: center;
   color: #00e374;
   font-size: 24px;
   font-style: normal;
