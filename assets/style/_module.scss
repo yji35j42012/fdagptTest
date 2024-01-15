@@ -29,9 +29,10 @@
 	&+.front_filter {
 		margin-left: 16px;
 	}
-&._down{
-	background-image: url("../images/icon_down.svg");
-}
+
+	&._down {
+		background-image: url("../images/icon_down.svg");
+	}
 
 	// .icon_sort
 	&_sort {
@@ -289,15 +290,16 @@
 }
 
 .wrap {
-	
+
 	width: 100%;
 	min-width: 1440px;
 	height: 100%;
 
-	&:not(._landing){
+	&:not(._landing) {
 		overflow: hidden;
 	}
-	&._landing{
+
+	&._landing {
 		overflow-x: hidden;
 	}
 }
@@ -323,7 +325,7 @@
 
 	// .header_title
 	&_title {
-		@include d_f(flex,none,center);
+		@include d_f(flex, none, center);
 		color: #00e374;
 		font-size: 24px;
 		font-style: normal;
@@ -364,7 +366,8 @@
 	// .menu_li
 	&_li {
 		color: #fff;
-@extend %hand;
+		@extend %hand;
+
 		&._try {
 			color: #00F8A9;
 
@@ -387,7 +390,9 @@
 			}
 		}
 
-		a {}
+		&._disabled {
+			pointer-events: none;
+		}
 	}
 }
 

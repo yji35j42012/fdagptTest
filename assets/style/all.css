@@ -491,6 +491,10 @@ table {
 .menu_li + .menu_li._btn {
   margin-left: 60px;
 }
+.menu_li._disabled {
+  pointer-events: none;
+}
+
 .logo {
   width: 36px;
   height: 36px;
