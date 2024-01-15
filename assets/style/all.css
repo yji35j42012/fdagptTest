@@ -1127,7 +1127,7 @@ table {
 }
 .landing_info._team {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 17px;
 }
 .landing_info._team h1 {
   color: #57A248;
@@ -1256,6 +1256,7 @@ table {
 }
 .landing_team_item {
   width: calc(25% - 30px);
+  margin-bottom: 60px;
 }
 .landing_team_pic {
   overflow: hidden;

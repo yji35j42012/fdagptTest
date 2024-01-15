@@ -154,7 +154,7 @@
 
         &._team {
             padding-top: 80px;
-            padding-bottom: 80px;
+            padding-bottom: 17px;
 
             h1 {
                 color: #57A248;
@@ -317,6 +317,7 @@
         // .landing_team_item
         &_item {
             width: calc(100% / 4 - 30px);
+            margin-bottom: 60px;
         }
 
         // .landing_team_pic
