@@ -105,7 +105,6 @@
 					var scrollT=document.querySelector('.wrap');
 					var item=document.querySelector("#"+str).offsetTop;
 					var scrollTime;
-					console.log('item', item);
 					if (item>scrollT.scrollTop) {
 						this.downScroll(scrollT, item);
 					} else {
@@ -113,8 +112,12 @@
 					}
 				},
 				downScroll(sc, go) {
+					var count=30
+					if (go-sc.scrollTop>1000) {
+						count=60
+					}
 					this.scrollTime=setInterval(() => {
-						sc.scrollTop+=20
+						sc.scrollTop+=count
 						if (!this.headerBg&&sc.scrollTop>=this.screenH-60) {
 							this.headerBg=true
 						}
@@ -125,8 +128,12 @@
 					}, 1);
 				},
 				upScroll(sc, go) {
+					var count=30
+					if (Math.abs(go-sc.scrollTop)>1000) {
+						count=60
+					}
 					this.scrollTime=setInterval(() => {
-						sc.scrollTop-=20
+						sc.scrollTop-=count
 						if (this.headerBg&&sc.scrollTop<this.screenH-60) {
 							this.headerBg=false
 						}
