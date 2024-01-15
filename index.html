@@ -83,7 +83,6 @@
 				if (now=="/"||now=="/landing") {
 					this.nowPage="landing";
 				}
-
 				this.screenH=window.innerHeight
 				this.$refs.wrap.addEventListener('scroll', this.scrollHandler)
 			},
@@ -105,19 +104,25 @@
 					var scrollT=document.querySelector('.wrap');
 					var item=document.querySelector("#"+str).offsetTop;
 					var scrollTime;
+					var totalH=document.querySelector(".landing").offsetHeight
+					var lastH=document.querySelector(".landing_info:last-child").offsetHeight
+					var mh=this.screenH>lastH? totalH-this.screenH:totalH-lastH
 					if (item>scrollT.scrollTop) {
-						this.downScroll(scrollT, item);
+						this.downScroll(scrollT, item, mh);
 					} else {
 						this.upScroll(scrollT, item);
 					}
 				},
-				downScroll(sc, go) {
+				downScroll(sc, go, mh) {
 					var count=30
-					if (go-sc.scrollTop>1000) {
+					if (Math.abs(go-sc.scrollTop)>1000) {
 						count=60
 					}
 					this.scrollTime=setInterval(() => {
 						sc.scrollTop+=count
+						if (sc.scrollTop>=mh) {
+							clearInterval(this.scrollTime)
+						}
 						if (!this.headerBg&&sc.scrollTop>=this.screenH-60) {
 							this.headerBg=true
 						}
