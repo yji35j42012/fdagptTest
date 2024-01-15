@@ -7,9 +7,9 @@
                 <div class="landing_banner_t1">Empowering Solutions, Global Reach</div>
                 <div class="landing_banner_t2">MEDPilot's AI at Your Service</div>
                 <div class="landing_banner_t3">Intelligent Tools for FDA submission</div>
-                <button class="border_btn _green">
-                    <router-link to="/front">Try It Now!</router-link>
-                </button>
+                <!-- <button class="border_btn _green"> -->
+                    <router-link to="/front" class="border_btn _green">Try It Now!</router-link>
+                <!-- </button> -->
                 <span class="landing_banner_scroll">Scroll<i class="icon _down"></i></span>
             </div>
 
