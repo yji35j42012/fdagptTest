@@ -14,7 +14,10 @@
 	<div id="app" :class="['wrap','_'+nowPage]" ref="wrap">
 		<div :class="['header',nowPage=='landing'?'_landing':'',headerBg?'_on':'']">
 			<div class="header_title">
-				<div class="logo"><img src="./assets/images/logo.svg" alt=""></div>
+				<div class="logo">
+					<img v-if="nowPage=='landing'" src="./assets/images/logo.svg" alt="">
+					<img v-else src="./assets/images/logo_s.svg" alt="">
+				</div>
 				MEDPILOT
 				<span v-if="nowPage=='backend'" class="isBack">Backend</span>
 			</div>
@@ -36,6 +39,10 @@
 				id="dow">Download</button>
 			<div v-if="nowPage=='front'" class="user">Member 0001</div>
 		</div>
+
+		<button :class="['gotop',headerBg?'_on':'']" v-if="nowPage=='landing'" @click="gotopHandler" ref="gotop">
+			<img src="../assets/images/icon_gotop.svg" alt="">
+		</button>
 		<router-view></router-view>
 	</div>
 
@@ -114,10 +121,10 @@
 					}
 				},
 				downScroll(sc, go, mh) {
-					var count=30
-					if (Math.abs(go-sc.scrollTop)>1000) {
-						count=60
-					}
+					var count=20
+					// if (Math.abs(go-sc.scrollTop)>1000) {
+					// 	count=60
+					// }
 					this.scrollTime=setInterval(() => {
 						sc.scrollTop+=count
 						if (sc.scrollTop>=mh) {
@@ -133,10 +140,10 @@
 					}, 1);
 				},
 				upScroll(sc, go) {
-					var count=30
-					if (Math.abs(go-sc.scrollTop)>1000) {
-						count=60
-					}
+					var count=20
+					// if (Math.abs(go-sc.scrollTop)>1000) {
+					// 	count=60
+					// }
 					this.scrollTime=setInterval(() => {
 						sc.scrollTop-=count
 						if (this.headerBg&&sc.scrollTop<this.screenH-60) {
@@ -157,6 +164,10 @@
 						this.headerBg=false
 					}
 				},
+				gotopHandler() {
+					var scrollT=document.querySelector('.wrap');
+					this.upScroll(scrollT, 0)
+				}
 			},
 		});
 	</script>

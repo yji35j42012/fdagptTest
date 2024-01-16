@@ -1,14 +1,13 @@
 <template>
     <div class="landing">
         <div id="home" class="landing_banner">
-            <img src="./assets/images/landing_bg.jpeg" alt="">
             <div class="landing_banner_txt">
                 <img src="./assets/images/landing_logo.svg" alt="" class="landing_logo">
                 <div class="landing_banner_t1">Empowering Solutions, Global Reach</div>
                 <div class="landing_banner_t2">MEDPilot's AI at Your Service</div>
                 <div class="landing_banner_t3">Intelligent Tools for FDA submission</div>
                 <!-- <button class="border_btn _green"> -->
-                    <router-link to="/front" class="border_btn _green">Try It Now!</router-link>
+                <router-link to="/front" class="border_btn _blue">Try It Now!</router-link>
                 <!-- </button> -->
                 <span class="landing_banner_scroll">Scroll<i class="icon _down"></i></span>
             </div>
@@ -155,19 +154,34 @@
                 </li>
             </ul>
         </div>
+
+
     </div>
 </template>
 
 
 <script>
 
-module.exports = {
+module.exports={
     data() {
         return {};
     },
     components: {},
-    mounted() { },
-    methods: {
-    }
+    created() {
+        window.onload=function () {
+            let favicon=document.querySelector('link[rel="icon"]');
+            var s="/fdp-gpt/favicon.ico";
+
+
+            console.log('s.split("/")', s.split("/favicon.ico"));
+            var newHref = s.split("/favicon.ico")[0]+"/"+"favicon_landing.ico"
+            console.log('newHref',newHref);
+            console.log('favicon', favicon);
+            // favicon.href="../favicon-dark.ico";
+        }
+    },
+    mounted() {
+    },
+    methods: {}
 }
 </script>
