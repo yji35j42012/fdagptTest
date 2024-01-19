@@ -294,13 +294,16 @@
 	width: 100%;
 	min-width: 1440px;
 	height: 100%;
-
+@include mw(L){
+	min-width: auto;
+}
 	&:not(._landing) {
 		overflow: hidden;
 	}
 
 	&._landing {
 		overflow-x: hidden;
+		
 	}
 }
 

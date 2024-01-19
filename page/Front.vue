@@ -271,45 +271,45 @@ module.exports={
     },
     methods: {
         clearSearch() {
-            this.serchInp=""
+            this.serchInp = ""
         },
         submitSearch() {
-            this.showLoading=true
-            var dow=document.querySelector("#dow");
+            this.showLoading = true
+            var dow = document.querySelector("#dow");
             dow.removeAttribute("disabled")
             this.fakeGet()
         },
         fliterItemHandler(i) {
-            this.filter_itemPage=i
+            this.filter_itemPage = i
         },
         fliterTbItem(i) {
-            this.tb_itemPage=i
+            this.tb_itemPage = i
         },
         // 這是測試用的
         fakeGet() {
             setTimeout(() => {
-                this.showLoading=false
-                this.filter_item=filter_itemData
-                this.filter_tb_item=filter_tb_itemData
-                this.filter_item_content=filter_itemContent
-                this.filter_tb_content=filter_tbData
+                this.showLoading = false
+                this.filter_item = filter_itemData
+                this.filter_tb_item = filter_tb_itemData
+                this.filter_item_content = filter_itemContent
+                this.filter_tb_content = filter_tbData
             }, 1000);
         },
         returnAlert() {
-            this.alertMsg.show=false
-            this.alertMsg.title=""
-            this.alertMsg.msg=""
+            this.alertMsg.show = false
+            this.alertMsg.title = ""
+            this.alertMsg.msg = ""
         },
         sortHandler(n) {
-            if (this.sortList[n]=='') {
-                this.sortList=['', '', '', '', ''];
-                this.sortList[n]='_asc';
-            } else if (this.sortList[n]=='_asc') {
-                this.sortList=[0, 0, 0, 0, 0];
-                this.sortList[n]='_desc';
-            } else if (this.sortList[n]=='_desc') {
-                this.sortList=[0, 0, 0, 0, 0];
-                this.sortList[n]='';
+            if (this.sortList[n] == '') {
+                this.sortList = ['', '', '', '', ''];
+                this.sortList[n] = '_asc';
+            } else if (this.sortList[n] == '_asc') {
+                this.sortList = [0, 0, 0, 0, 0];
+                this.sortList[n] = '_desc';
+            } else if (this.sortList[n] == '_desc') {
+                this.sortList = [0, 0, 0, 0, 0];
+                this.sortList[n] = '';
             }
         }
     }
