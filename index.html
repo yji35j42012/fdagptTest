@@ -108,6 +108,9 @@
 				download() { },
 				menuHandler(str) {
 					clearInterval(this.scrollTime)
+					if (this.screenH!==window.innerHeight) {
+						this.screenH=window.innerHeight
+					}
 					var scrollT=document.querySelector('.wrap');
 					var item=document.querySelector("#"+str).offsetTop;
 					var scrollTime;
